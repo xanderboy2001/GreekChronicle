@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>513</width>
+    <height>585</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Results</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>0</y>
+      <width>481</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTreeWidget" name="memberTreeWidget">
+       <property name="minimumSize">
+        <size>
+         <width>451</width>
+         <height>192</height>
+        </size>
+       </property>
+       <column>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Big</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Birthdate</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Date Joined</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTreeWidget" name="fileTreeWidget">
+       <property name="minimumSize">
+        <size>
+         <width>451</width>
+         <height>192</height>
+        </size>
+       </property>
+       <column>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Location</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Date Created</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Date Modified</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="new_search_pushButton">
+       <property name="text">
+        <string>New Search</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="edit_item_pushButton">
+         <property name="text">
+          <string>Edit Item</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="del_item_pushButton">
+         <property name="text">
+          <string>Delete Item</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="open_item_pushButton">
+       <property name="text">
+        <string>Open Item</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>513</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>memberTreeWidget</sender>
+   <signal>itemActivated(QTreeWidgetItem*,int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>322</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>741</x>
+     <y>169</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fileTreeWidget</sender>
+   <signal>itemActivated(QTreeWidgetItem*,int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>238</x>
+     <y>332</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>709</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>new_search_pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>newSearch()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>466</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>311</x>
+     <y>470</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>edit_item_pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>editItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>486</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>167</x>
+     <y>551</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>del_item_pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>deleteItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>385</x>
+     <y>483</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>440</x>
+     <y>557</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>open_item_pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>364</x>
+     <y>527</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>301</x>
+     <y>548</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>memberTreeWidget</sender>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>fileTreeWidget</receiver>
+   <slot>clearSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>197</x>
+     <y>108</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>151</x>
+     <y>305</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fileTreeWidget</sender>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>memberTreeWidget</receiver>
+   <slot>clearSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>218</x>
+     <y>313</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>227</x>
+     <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>newSearch()</slot>
+  <slot>openItem()</slot>
+  <slot>editItem()</slot>
+  <slot>deleteItem()</slot>
+ </slots>
+</ui>
